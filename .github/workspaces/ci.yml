@@ -1,0 +1,17 @@
+on:
+  workflow_dispatch:
+jobs:
+  app-build:
+    steps:
+      - uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for SonarCloud analysis
+     - name: Build
+        run: |
+          npm ci
+          npx nx run app:build
+    - uses: actions/upload-artifact@v4
+      with:
+        name: dist
+        path: |
+          packages/app/dist 

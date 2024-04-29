@@ -1,0 +1,10 @@
+{
+  "name": "nx-source-issue",
+  "dependencies": {
+    "nx": "^18.3.4",
+    "typescript": "^5.4.5"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
